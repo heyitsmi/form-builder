@@ -4,6 +4,8 @@
 
 Designed for developers who need a fast, flexible, and modern solution without being tied to large frameworks.
 
+![Form Builder Preview](thumbnail.webp)
+
 ## ✨ Key Features
 
 * **Ultra Lightweight**: Written in pure Vanilla JS. No jQuery, React, or Vue required.  
