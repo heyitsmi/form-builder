@@ -28,7 +28,7 @@ Then import it in your Javascript file:
 
 ```js
 import { FormBuilder } from '@heyitsmi/form-builder';
-import '@heyitsmi/form-builder/dist/form-builder.css';
+import '@heyitsmi/form-builder/form-builder.css';
 
 const builder = new FormBuilder('#builder-area');
 ```
@@ -39,10 +39,10 @@ Simply download the files or use a CDN link.
 
 ```html
 <!-- 1. Load Styles -->
-<link rel="stylesheet" href="path/to/form-builder.css">
+<link rel="stylesheet" href="https://unpkg.com/@heyitsmi/form-builder/form-builder.css">
 
 <!-- 2. Load Library -->
-<script src="path/to/form-builder.js"></script>
+<script src="https://unpkg.com/@heyitsmi/form-builder/form-builder.js"></script>
 
 <script>
   // Global class 'FormBuilder' is now available
