@@ -6,11 +6,11 @@ Designed for developers who need a fast, flexible, and modern solution without b
 
 ## ✨ Key Features
 
-* 🪶 **Ultra Lightweight**: Written in pure Vanilla JS. No jQuery, React, or Vue required.  
-* ⚡ **Zero Dependency**: Uses inline SVGs for icons and scoped CSS for styling.  
-* 🛠️ **Fully Customizable**: Configure sidebar position, select active components, and swap icons to match your branding.  
-* 💾 **JSON Output**: Generates a standardized JSON schema ready to be stored in your database.  
-* 📱 **Responsive**: Works perfectly on both Desktop and Mobile devices.
+* **Ultra Lightweight**: Written in pure Vanilla JS. No jQuery, React, or Vue required.  
+* **Zero Dependency**: Uses inline SVGs for icons and scoped CSS for styling.  
+* **Fully Customizable**: Configure sidebar position, select active components, and swap icons to match your branding.  
+* **JSON Output**: Generates a standardized JSON schema ready to be stored in your database.  
+* **Responsive**: Works perfectly on both Desktop and Mobile devices.
 
 ## 🚀 Installation
 
