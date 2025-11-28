@@ -1,5 +1,5 @@
 {
-  "name": "form-builder",
+  "name": "@heyitsmi/form-builder",
   "version": "1.0.0",
   "description": "A lightweight, zero-dependency JavaScript form builder library with drag-and-drop support.",
   "main": "form-builder.js",
