@@ -1,0 +1,25 @@
+{
+  "name": "form-builder",
+  "version": "1.0.0",
+  "description": "A lightweight, zero-dependency JavaScript form builder library with drag-and-drop support.",
+  "main": "form-builder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyitsmi/form-builder.git"
+  },
+  "keywords": [
+    "form-builder",
+    "drag-and-drop",
+    "vanilla-js",
+    "zero-dependency"
+  ],
+  "author": "Hilmi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heyitsmi/form-builder/issues"
+  },
+  "homepage": "https://github.com/heyitsmi/form-builder#readme"
+}
