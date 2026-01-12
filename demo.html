@@ -17,9 +17,48 @@
                 padding: 0 1rem; 
                 min-height: calc(100vh - 100px); 
             }
+            #jsonModal { 
+                padding: 1.5rem; 
+                border-radius: 0.75rem; 
+                border: 1px solid #e5e7eb;
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+                max-width: 42rem;
+            }
+            #jsonModal::backdrop {
+                background: rgba(0, 0, 0, 0.5);
+            }
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 1rem;
+            }
+            .modal-close {
+                background: transparent;
+                border: none;
+                cursor: pointer;
+                padding: 0.25rem;
+                color: #6b7280;
+                transition: color 0.2s;
+            }
+            .modal-close:hover {
+                color: #1f2937;
+            }
+            #jsonOutput {
+                background: #1f2937;
+                color: #10b981;
+                padding: 1rem;
+                border-radius: 0.5rem;
+                overflow: auto;
+                max-height: 400px;
+                font-size: 0.875rem;
+                font-family: 'Courier New', monospace;
+                white-space: pre;
+            }
             @media (max-width: 768px) {
                 .navbar { padding: 1rem; }
                 #app { margin: 1rem auto; padding: 0 0.5rem; }
+                #jsonModal { max-width: 90%; }
             }
         </style>
     </head>
@@ -33,9 +72,27 @@
                 </svg>
                 My Form App
             </div>
-            <button class="btn" id="saveBtn">Save Form</button>
+            <div style="display: flex; gap: 0.75rem;">
+                <button class="btn" id="viewJsonBtn" style="background: white; color: #1f2937; border: 1px solid #e5e7eb;">View JSON</button>
+                <button class="btn" id="saveBtn">Save Form</button>
+            </div>
         </nav>
         <div id="app"></div>
+        
+        <!-- Modal JSON -->
+        <dialog id="jsonModal">
+            <div class="modal-header">
+                <h3 style="font-size: 1.125rem; font-weight: 700; margin: 0;">Generated Schema (JSON)</h3>
+                <button class="modal-close" onclick="document.getElementById('jsonModal').close()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <pre id="jsonOutput"></pre>
+        </dialog>
+        
         <script src="form-builder.js"></script>
         <script>
             const builder = new FormBuilder('#app', {
@@ -52,6 +109,13 @@
                         iconHtml: '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>'
                     }
                 ]
+            });
+            
+            // Handle View JSON
+            document.getElementById('viewJsonBtn').addEventListener('click', () => {
+                const schema = builder.getJson();
+                document.getElementById('jsonOutput').textContent = JSON.stringify(schema, null, 2);
+                document.getElementById('jsonModal').showModal();
             });
             
             // Handle Save
